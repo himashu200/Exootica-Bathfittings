@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exootica Bathfittings | Premium Quality</title>
+  <!-- Font Awesome 5 (free) for icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #1e1e1e;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* header / navigation */
+    header {
+      background: linear-gradient(145deg, #003153, #021c3b);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .logo-area h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+    }
+
+    .logo-area h1 i {
+      color: #f5b342;
+      margin-right: 8px;
+    }
+
+    .logo-area .tagline {
+      font-size: 0.9rem;
+      color: #b0d4ff;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: #eee;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+      font-size: 1.1rem;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      border-bottom-color: #f5b342;
+      color: #fff;
+    }
+
+    /* main content area */
+    main {
+      flex: 1;
+      max-width: 1200px;
+      width: 90%;
+      margin: 2.5rem auto;
+    }
+
+    /* page cards/sections */
+    .page-card {
+      background: white;
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 20px 35px -8px rgba(0,20,40,0.15);
+      margin-bottom: 2rem;
+      border: 1px solid rgba(0,49,83,0.05);
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #003153;
+      margin-bottom: 1.5rem;
+      border-left: 6px solid #f5b342;
+      padding-left: 1.2rem;
+    }
+
+    h3 {
+      color: #021c3b;
+      margin: 1.2rem 0 0.8rem;
+      font-size: 1.4rem;
+    }
+
+    .company-highlight {
+      background: #f0f7ff;
+      border-radius: 28px;
+      padding: 1.8rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0 0.5rem;
+    }
+
+    .info-item {
+      background: #fafafa;
+      padding: 1.2rem 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.02);
+      border-left: 4px solid #f5b342;
+      transition: all 0.2s;
+    }
+
+    .info-item i {
+      color: #003153;
+      width: 32px;
+      font-size: 1.4rem;
+      margin-right: 10px;
+    }
+
+    .info-item strong {
+      font-size: 1.2rem;
+      color: #021c3b;
+    }
+
+    .info-item p {
+      margin-top: 6px;
+      color: #2f4858;
+      font-size: 1.05rem;
+      word-break: break-word;
+    }
+
+    .address-block {
+      background: #eef5fb;
+      padding: 1.5rem 2rem;
+      border-radius: 30px;
+      margin: 2rem 0 1rem;
+      font-style: normal;
+      border: 1px dashed #003153;
+    }
+
+    .address-block i {
+      color: #f5b342;
+      font-size: 1.8rem;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+
+    .map-placeholder {
+      background: #d9e9ff;
+      height: 200px;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #021c3b;
+      font-weight: 500;
+      margin: 1.8rem 0 0.5rem;
+      border: 2px solid white;
+      box-shadow: inset 0 0 0 2px #b0c4de;
+      background-image: radial-gradient(circle at 20px 20px, #aac9ff 2px, transparent 2px), 
+                      linear-gradient(#b8d4ff, #d0e2ff);
+      background-size: 40px 40px, 100%;
+    }
+
+    .map-placeholder i {
+      font-size: 2.5rem;
+      margin-right: 10px;
+      color: #003153;
+    }
+
+    .policy-section {
+      margin-bottom: 2rem;
+    }
+
+    .policy-section p {
+      margin-bottom: 1rem;
+      color: #2e3f53;
+    }
+
+    hr.divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #f5b342, #c5d6e8, transparent);
+      margin: 2rem 0;
+    }
+
+    footer {
+      background: #021c3b;
+      color: #ccddee;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1rem;
+      border-top: 3px solid #f5b342;
+    }
+
+    footer .copyright {
+      letter-spacing: 0.5px;
+    }
+
+    footer i {
+      color: #f5b342;
+      margin: 0 4px;
+    }
+
+    .footer-note {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      color: #99badd;
+    }
+
+    .btn-contact {
+      display: inline-block;
+      background: #003153;
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      border: 2px solid #f5b342;
+      transition: 0.2s;
+    }
+
+    .btn-contact:hover {
+      background: #021c3b;
+      border-color: white;
+    }
+
+    /* responsive */
+    @media (max-width: 680px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 1.2rem;
+      }
+      .logo-area h1 {
+        font-size: 1.8rem;
+      }
+      .page-card {
+        padding: 1.5rem;
+      }
+    }
+
+    /* simple tab / page switching */
+    .page {
+      display: none;
+    }
+
+    .page.active-page {
+      display: block;
+    }
+
+    /* additional styling for terms, privacy */
+    ul.terms-list {
+      margin-left: 2rem;
+      margin-top: 0.5rem;
+      color: #1f3a4b;
+    }
+    ul.terms-list li {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-area">
+      <h1><i class="fas fa-shower"></i> Exootica Bathfittings</h1>
+      <div class="tagline">Luxury & durability for every bath</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" data-page="home" class="nav-link active">Home</a></li>
+        <li><a href="#" data-page="about" class="nav-link">About</a></li>
+        <li><a href="#" data-page="contact" class="nav-link">Contact</a></li>
+        <li><a href="#" data-page="privacy" class="nav-link">Privacy</a></li>
+        <li><a href="#" data-page="terms" class="nav-link">T&C</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME PAGE -->
+    <div id="home" class="page active-page">
+      <div class="page-card">
+        <div class="company-highlight">
+          <div>
+            <h2 style="border-left: none; padding-left: 0; margin-bottom: 0.3rem;">Exootica Bathfittings</h2>
+            <p style="font-size: 1.2rem;"><i class="fas fa-wrench" style="color:#f5b342;"></i> <strong>Nature of Business:</strong> Bathfittings service</p>
+          </div>
+          <div>
+            <p><i class="fas fa-phone-alt"></i> <strong>9153395555</strong></p>
+            <p><i class="fas fa-envelope"></i> exooticabathfittings@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <i class="fas fa-certificate"></i> <strong>Premium quality</strong>
+            <p>Modern designs, corrosion-resistant materials</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-tools"></i> <strong>Expert service</strong>
+            <p>Installation & maintenance by skilled team</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-shield-alt"></i> <strong>5 year warranty</strong>
+            <p>On selected bathfitting collections</p>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <h3><i class="fas fa-map-marker-alt" style="color:#f5b342;"></i> Our headquarters</h3>
+        <div class="address-block">
+          <p><i class="fas fa-location-dot"></i> <strong>Plot/House Number:</strong> 1/536-J-10<br>
+          <strong>Locality:</strong> Gali No. 4-A, Friends Colony Industrial Area, GT Road<br>
+          <strong>City/Postal Code:</strong> Shahdara, Delhi, 110032</p>
+        </div>
+        <div class="map-placeholder">
+          <i class="fas fa-map"></i> Interactive map location — Shahdara, Delhi (Google Maps)
+        </div>
+        <p style="margin-top: 1rem; text-align: right;"><i class="fas fa-crown" style="color: goldenrod;"></i> powerd by Exootica Bathfittings</p>
+      </div>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+      <div class="page-card">
+        <h2>About Us</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Exootica Bathfittings is dedicated to excellence in the bathfittings industry, combining innovative design with robust functionality. We serve homes, hotels, and commercial projects across Delhi/NCR.</p>
+        <div style="background: #eef2f7; border-radius: 24px; padding: 1.8rem;">
+          <p><i class="fas fa-quote-left" style="color:#f5b342; font-size: 2rem; opacity: 0.5;"></i></p>
+          <p style="font-size: 1.15rem;"><strong>powerd by Exootica Bathfittings</strong> — our team ensures every product reflects durability and elegance. From faucets to showers, we bring water to life.</p>
+          <p style="margin-top: 1rem;"><i class="fas fa-check-circle" style="color:#003153;"></i> 10+ years of industry experience</p>
+          <p><i class="fas fa-check-circle" style="color:#003153;"></i> 100% quality tested products</p>
+          <p><i class="fas fa-check-circle" style="color:#003153;"></i> Customer satisfaction guaranteed</p>
+        </div>
+        <!-- Additional info: About us requested as "Exootica Bathfittings and powerd by Exootica Bathfittings" so we mention it -->
+        <p style="margin-top: 2rem; font-style: italic; border-top: 1px solid #ccc; padding-top: 1.5rem;">Exootica Bathfittings and powerd by Exootica Bathfittings — a legacy of trust.</p>
+      </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+      <div class="page-card">
+        <h2>Contact Us</h2>
+        <div class="info-grid" style="grid-template-columns: repeat(2,1fr);">
+          <div class="info-item">
+            <i class="fas fa-mobile-alt"></i> <strong>Mobile</strong>
+            <p>9153395555</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope-open-text"></i> <strong>Email</strong>
+            <p>exooticabathfittings@gmail.com</p>
+          </div>
+        </div>
+        <div class="address-block" style="background: #f5f9ff;">
+          <i class="fas fa-map-pin"></i> <strong>Address:</strong><br>
+          Plot/House Number: 1/536-J-10, Gali No. 4-A, Friends Colony Industrial Area, GT Road, Shahdara, Delhi - 110032
+        </div>
+        <div class="map-placeholder" style="background: #cbdded;">
+          <i class="fas fa-street-view"></i> Locate us: Friends Colony Industrial, Shahdara
+        </div>
+        <a href="#" class="btn-contact"><i class="fas fa-phone"></i> Call 9153395555</a>
+        <p style="margin-top: 1.8rem;"><i class="fas fa-clock"></i> Mon–Sat: 9:30 AM – 7:00 PM</p>
+      </div>
+    </div>
+
+    <!-- PRIVACY POLICY PAGE -->
+    <div id="privacy" class="page">
+      <div class="page-card">
+        <h2>Privacy Policy</h2>
+        <div class="policy-section">
+          <p>Last updated: 2025</p>
+          <p>Exootica Bathfittings (powerd by Infragrow Industries) respects your privacy. This policy explains how we handle your information when you visit our site or contact us.</p>
+          <h3>Information collection</h3>
+          <p>We collect personal details like name, mobile number (9153395555), email, and address only when voluntarily provided via contact forms or calls. We do not sell or rent your data.</p>
+          <h3>Use of information</h3>
+          <p>To respond to inquiries, process service requests, and improve our bathfittings service. We may use your email to send updates related to Exootica Bathfittings.</p>
+          <h3>Data protection</h3>
+          <p>We implement reasonable security measures. However, no online transmission is 100% secure.</p>
+          <p>For any privacy concerns, contact us at exooticabathfittings@gmail.com or visit our Delhi address.</p>
+        </div>
+        <p><i class="fas fa-shield" style="color:#003153;"></i> This policy also applies to Infragrow Industries as our technology partner.</p>
+      </div>
+    </div>
+
+    <!-- TERMS AND CONDITIONS PAGE -->
+    <div id="terms" class="page">
+      <div class="page-card">
+        <h2>Terms & Conditions</h2>
+        <p>Welcome to Exootica Bathfittings (powerd by Infragrow Industries). By using our site or services, you agree to the following terms:</p>
+        <ul class="terms-list">
+          <li><strong>Services:</strong> All bathfitting installations, repairs, and product sales are subject to availability and written quotation.</li>
+          <li><strong>Pricing:</strong> Prices are subject to change without notice. Final charges will be confirmed before service.</li>
+          <li><strong>Warranty:</strong> Warranty terms vary by product; please retain your invoice.</li>
+          <li><strong>Limitation of liability:</strong> Exootica Bathfittings shall not be liable for indirect damages arising from use of fittings.</li>
+          <li><strong>Governing law:</strong> Disputes fall under Delhi jurisdiction.</li>
+          <li><strong>Contact:</strong> For complaints, call 9153395555 or visit our Shahdara office.</li>
+        </ul>
+        <p>We reserve the right to update these terms. Continued use means acceptance.</p>
+        <p style="margin-top: 1.5rem;">© Exootica Bathfittings – all legal clauses effective immediately.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="copyright">
+      <i class="fas fa-copyright"></i> Copyright by Exootica Bathfittings <span id="current-year"></span> 
+    </div>
+    <div class="footer-note">
+      <i class="fas fa-bolt"></i> powerd by Infragrow Industries <i class="fas fa-industry"></i>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      // set current year in footer copyright
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      // get all nav links, all page divs
+      const navLinks = document.querySelectorAll('.nav-link');
+      const pages = document.querySelectorAll('.page');
+
+      // function to switch active page
+      function showPage(pageId) {
+        pages.forEach(page => {
+          if (page.id === pageId) {
+            page.classList.add('active-page');
+          } else {
+            page.classList.remove('active-page');
+          }
+        });
+
+        // update active class on nav
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('data-page') === pageId) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      // add click listeners
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetPage = this.getAttribute('data-page');
+          if (targetPage) {
+            showPage(targetPage);
+            // optional: update browser url hash or scroll
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        });
+      });
+
+      // if someone lands on page with hash, try to show (e.g., #contact)
+      const hash = window.location.hash.substring(1); // remove #
+      if (hash && ['home','about','contact','privacy','terms'].includes(hash)) {
+        showPage(hash);
+      } else {
+        // default home already active via class active-page
+      }
+
+      // add small google-maps style note (just decorative)
+    })();
+  </script>
+
+  <!-- optional inline to guarantee Infragrow visible -->
+  <style>
+    /* just to reinforce the footer mention */
+    .footer-note i.fa-industry {
+      color: #f5b342;
+    }
+  </style>
+</body>
+</html>
